@@ -7,11 +7,11 @@ export default function GalleryWindow(props) {
       <a className="Window-des">
         <a>
           <img src={Star} width="30px" height="30px" />
-          <a class="Window-rating"> {props.rating}</a>
+          <a className="Window-rating"> {props.rating}</a>
         </a>
-        <a class="Window-name">{props.name}</a>
+        <a className="Window-name">{props.name}</a>
       </a>
-      <a class="Window-details">Universe: {props.uni}</a>
+      <a className="Window-details">Universe: {props.uni}</a>
     </div>
   );
 }
