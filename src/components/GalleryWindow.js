@@ -4,14 +4,14 @@ export default function GalleryWindow(props) {
   return (
     <div className="gallery-window">
       <img src={props.pic} className="Window-img" />
-      <a className="Window-des">
-        <a>
+      <div className="Window-des">
+        <div>
           <img src={Star} width="30px" height="30px" />
-          <a className="Window-rating"> {props.rating}</a>
-        </a>
-        <a className="Window-name">{props.name}</a>
-      </a>
-      <a className="Window-details">Universe: {props.uni}</a>
+          <div className="Window-rating"> {props.rating}</div>
+        </div>
+        <div className="Window-name">{props.name}</div>
+      </div>
+      <div className="Window-details">Universe: {props.uni}</div>
     </div>
   );
 }
