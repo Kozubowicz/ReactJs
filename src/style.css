@@ -46,11 +46,13 @@ nav {
   padding: 30px 20px 0px 20px;
   font-size: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .inputText {
   font-size: 1.5rem;
-  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .SecondaryHeader {
