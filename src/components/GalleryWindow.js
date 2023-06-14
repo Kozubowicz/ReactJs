@@ -2,7 +2,7 @@ import Star from "../images/Star.png";
 
 export default function GalleryWindow(props) {
   return (
-    <div class="gallery-window">
+    <div className="gallery-window">
       <img src={props.pic} className="Window-img" />
       <a className="Window-des">
         <a>
