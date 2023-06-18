@@ -43,18 +43,9 @@ nav {
   align-items: center;
 }
 
-.PrimaryHeader {
+.searchBar {
   padding: 40px 20px 0px 20px;
   font-size: 1.5rem;
-}
-
-.SecondaryHeader {
-  font-size: 1.4rem;
-  border: 2px solid silver;
-  display: flex;
-}
-
-.searchBar {
   display: flex;
   justify-content: center;
 }
@@ -70,9 +61,24 @@ nav {
   border-bottom: 1px solid silver;
 }
 
-.gallery {
-  display: block;
-  flex-direction: column;
+.searchResults {
+  padding: 0px 20px 0px 20px;
+  font-size: 1.4rem;
+  align-items: center;
+}
+
+.message {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  line-height: 2;
+}
+
+.result {
+  display: flex;
+  border: 2px solid silver;
 }
 .Poster {
   height: 150px;
@@ -85,7 +91,6 @@ nav {
   justify-content: center;
   line-height: 1.5;
 }
-
 .link {
   color: rgb(42, 255, 14);
 }
