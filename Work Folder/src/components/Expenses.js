@@ -12,7 +12,12 @@ export default function Expenses({ data, selectedPeriod, onDataChange }) {
           if (item.title === selectedPeriod) {
             const updatedExpenses = [
               ...item.expenses,
-              { title: expenseTitle, amount: expense, date: new Date() },
+              {
+                title: expenseTitle,
+                amount: expense,
+                date: new Date().toLocaleDateString(),
+                id: new Date(),
+              },
             ];
             return { ...item, expenses: updatedExpenses };
           }

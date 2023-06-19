@@ -1,10 +1,6 @@
 import React from "react";
-export default function History({
-  data,
-  selectedPeriod,
-  onDataChange,
-  onDeleteExpense,
-}) {
+
+export default function History({ data, selectedPeriod, onDeleteExpense }) {
   const renderExpenses = () => {
     const period = data.find((period) => period.title === selectedPeriod);
     if (period && period.expenses) {
@@ -12,9 +8,15 @@ export default function History({
         <tr key={expense.title}>
           <td>{expense.title}</td>
           <td>{expense.amount}</td>
-          <td>{expense.date.toLocaleDateString()}</td>
+          <td>{expense.date}</td>
           <td>
-            <button id="delete" onClick={() => onDeleteExpense(expense)}>
+            <button
+              id="delete"
+              onClick={() => {
+                onDeleteExpense(expense);
+                console.log(expense.amount);
+              }}
+            >
               X
             </button>
           </td>
@@ -24,6 +26,7 @@ export default function History({
       return <p>No expenses available</p>;
     }
   };
+
   const budget = () => {
     const period = data.find((period) => period.title === selectedPeriod);
     if (period && period.expenses) {
@@ -36,14 +39,16 @@ export default function History({
         <div className="periodSummary">
           <b>{selectedPeriod}</b>
           <table id="summaryTable">
-            <tr>
-              <td id="bug">{period.budget.toFixed(2)}</td>{" "}
-              <td id="spen">{totalAmount.toFixed(2)}</td>
-            </tr>
-            <tr className="bottom">
-              <td>budget</td>
-              <td>spend</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td id="bug">{period.budget.toFixed(2)}</td>{" "}
+                <td id="spen">{totalAmount.toFixed(2)}</td>
+              </tr>
+              <tr className="bottom">
+                <td>budget</td>
+                <td>spend</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       );
@@ -64,7 +69,6 @@ export default function History({
           </tr>
         </thead>
         <tbody>{renderExpenses()}</tbody>
-        {console.log(data)}
       </table>
     </div>
   );

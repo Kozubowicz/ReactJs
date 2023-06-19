@@ -79,6 +79,12 @@ select {
   border-radius: 40px;
   color: white;
 }
+
+option {
+  color: white;
+  background-color: rgb(39, 39, 39);
+  border: none;
+}
 button {
   background-color: transparent;
   border-radius: 40px;

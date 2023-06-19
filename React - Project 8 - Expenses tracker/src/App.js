@@ -43,20 +43,24 @@ export default function App() {
   };
 
   const handleDeleteExpense = (expense) => {
-    setData((prevData) => {
-      const newData = prevData.map((period) => {
-        if (period.title === selectedPeriod) {
-          return {
-            ...period,
-            expenses: period.expenses.filter(
-              (item) => item.title !== expense.title
-            ),
-          };
-        }
-        return period;
-      });
-      return newData;
-    });
+    const updatedData = [...data];
+    const periodIndex = updatedData.findIndex(
+      (period) => period.title === selectedPeriod
+    );
+
+    if (periodIndex !== -1) {
+      const period = updatedData[periodIndex];
+      const expenseIndex = period.expenses.findIndex(
+        (item) => item.id === expense.id
+      );
+
+      if (expenseIndex !== -1) {
+        period.expenses = period.expenses.filter(
+          (item, index) => index !== expenseIndex
+        );
+        handleDataChange(updatedData);
+      }
+    }
   };
 
   return (
@@ -77,7 +81,6 @@ export default function App() {
       <History
         data={data}
         selectedPeriod={selectedPeriod}
-        onDataChange={handleDataChange}
         onDeleteExpense={handleDeleteExpense}
       />
       <Footer />
