@@ -15,7 +15,7 @@ export default function App() {
       <NavBar />
       <SearchBar SearchList={handleSearch} />
       <SearchResults props={dataList} />
-      {console.log(dataList)}
+
       <Footer />
     </div>
   );

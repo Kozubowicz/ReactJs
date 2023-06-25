@@ -10,13 +10,7 @@ export default function History({ data, selectedPeriod, onDeleteExpense }) {
           <td>{expense.amount}</td>
           <td>{expense.date}</td>
           <td>
-            <button
-              id="delete"
-              onClick={() => {
-                onDeleteExpense(expense);
-                console.log(expense.amount);
-              }}
-            >
+            <button id="delete" onClick={() => onDeleteExpense(expense)}>
               X
             </button>
           </td>

@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+
+const mongo = require("mongodb");
+const MongoClient = mongo.MongoClient;
 
 export default function SearchBar({ SearchList }) {
   const [inputValue, setInputValue] = useState("");
