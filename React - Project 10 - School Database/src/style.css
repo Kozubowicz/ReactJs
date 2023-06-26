@@ -7,6 +7,8 @@ body {
 .App {
   max-width: 800px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 ::-webkit-scrollbar {
@@ -20,12 +22,28 @@ body {
   background: rgb(0, 255, 0);
   border-radius: 10px;
 }
+
 button {
   background-color: transparent;
   border-radius: 40px;
   color: white;
   padding: 5px 10px 5px 10px;
   margin: 5px 10px;
+}
+input {
+  background-color: transparent;
+  color: rgb(0, 255, 34);
+  padding: 5px;
+}
+select {
+  background-color: transparent;
+  color: white;
+  padding: 5px 20px;
+  margin-right: 20px;
+}
+option {
+  background-color: grey;
+  color: white;
 }
 
 nav {
@@ -34,6 +52,7 @@ nav {
   display: flex;
   justify-content: space-around;
   border-radius: 30px;
+  margin-bottom: 40px;
   box-shadow: 0px 0px 40px rgba(0, 238, 20, 0.911);
 }
 .NavLogo {
@@ -55,11 +74,13 @@ nav {
   justify-content: center;
 }
 
-.dataBasesContainer {
-  margin: 30px 10px 10px 10px;
+.functionsContainer {
+  padding: 10px;
   display: flex;
+  margin: auto;
   justify-content: center;
-  flex-wrap: wrap;
+  box-shadow: 0px 0px 10px rgba(0, 238, 20, 0.6);
+  border-radius: 30px;
 }
 
 .tablesConteiner {
@@ -81,8 +102,8 @@ nav {
 
 table {
   border-collapse: collapse;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  margin-top: 40px;
+  margin-bottom: 25px;
   text-align: center;
   box-shadow: 0px 0px 20px rgba(0, 238, 20, 0.6);
 }
@@ -93,7 +114,6 @@ caption {
   font-size: 1.4rem;
   box-shadow: 0px 0px 20px rgba(0, 238, 20, 096);
 }
-
 th {
   padding: 10px;
   box-shadow: 2px 4px 10px rgb(0, 218, 0);
@@ -103,16 +123,18 @@ td {
   box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.4);
 }
 
-.addRecord {
+.addRekord {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.addButtonContainer {
+.addButtonContainer,
+.sendButtonContainer {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
-.addRecordButton {
+.addRekordButton {
   margin: 10px 0px;
 }
 #failure {
@@ -122,16 +144,24 @@ td {
 .hidden {
   display: none;
 }
-
-.visibleRecordInputs {
+.visibleRekordInputs {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
 }
-input {
-  background-color: transparent;
-  color: rgb(0, 255, 34);
+
+.primaryContainer {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.secondaryContainer {
+  line-height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 footer {

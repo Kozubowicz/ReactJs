@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export default function Expenses({ collections, dataBase, setRefreshData }) {
-  // Support input type="text"
   const [inputValues, setInputValues] = useState({});
 
   const handleInputChange = (name, value, tableName) => {
@@ -17,7 +16,6 @@ export default function Expenses({ collections, dataBase, setRefreshData }) {
 
   // Hiding and unhiding inputs to add new record
   const [hiddenClasses, setHiddenClasses] = useState({});
-
   const [serwerAnswer, setSerwerAnswer] = useState(true);
 
   const toggleHiddenClass = (index) => {
@@ -27,8 +25,8 @@ export default function Expenses({ collections, dataBase, setRefreshData }) {
     }));
   };
 
-  // Featching add/remove record to server
-  const sendDataToServer = (dataToSend) => {
+  // Featching add/remove rekord to server
+  const sendDataToServer = async (dataToSend) => {
     return fetch(`http://192.168.1.3:8080/api/sendData`, {
       method: "POST",
       headers: {
@@ -59,13 +57,12 @@ export default function Expenses({ collections, dataBase, setRefreshData }) {
         action: "add",
         dataBase: dataBase,
         collection: table,
-        newRecord: { ...inputValues[table] },
+        newRekord: { ...inputValues[table] },
       };
 
       try {
         let answer = await sendDataToServer(newObject);
         console.log(answer.success);
-        // Jeśli otrzymasz odpowiedź od serwera, możesz manipulować nią tutaj
         if (answer.success === false) {
           setSerwerAnswer(false);
         } else {
@@ -127,11 +124,11 @@ export default function Expenses({ collections, dataBase, setRefreshData }) {
           </tbody>
         </table>
 
-        <div className="addRecord">
-          <div className="addRecordButton">
-            <button onClick={() => toggleHiddenClass(table[0])}>Add new record</button>
+        <div className="addRekord">
+          <div className="addRekordButton">
+            <button onClick={() => toggleHiddenClass(table[0])}>Add new rekord</button>
           </div>
-          <div className={hiddenClasses[table[0]] ? "visibleRecordInputs" : "hidden"}>
+          <div className={hiddenClasses[table[0]] ? "visibleRekordInputs" : "hidden"}>
             {table[1].slice(1).map((e, index) => {
               let typ = "text";
               if (e === "grade") {
@@ -159,7 +156,8 @@ export default function Expenses({ collections, dataBase, setRefreshData }) {
             })}
 
             <div className="addButtonContainer">
-              <div id="failure" className={serwerAnswer ? "hidden" : "visibleRecordInputs"}>
+              {/**/}
+              <div id="failure" className={serwerAnswer ? "hidden" : "visibleRekordInputs"}>
                 Something isn't right
               </div>
 
@@ -207,7 +205,7 @@ export default function Expenses({ collections, dataBase, setRefreshData }) {
 
   return (
     <div>
-      <div className="tablesConteiner">{convertTo2DArray(collections)}</div>
+      <div className="primaryContainer">{convertTo2DArray(collections)}</div>
     </div>
   );
 }
