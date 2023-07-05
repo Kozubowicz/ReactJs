@@ -5,7 +5,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .App {
-  max-width: 1000px;
+  max-width: 800px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -30,6 +30,11 @@ button {
   padding: 5px 10px 5px 10px;
   margin: 5px 10px;
 }
+input {
+  background-color: transparent;
+  color: rgb(0, 255, 34);
+  padding: 5px;
+}
 
 nav {
   font-size: 1.5rem;
@@ -53,40 +58,52 @@ nav {
   padding-left: 10px;
 }
 
-.functionsContainer {
-  padding: 10px;
+.signInButton {
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  justify-content: center;
-  box-shadow: 0px 0px 10px rgba(0, 238, 20, 0.6);
-  border-radius: 30px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
+#failure {
+  color: red;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
+.Container {
+  display: flex;
+  justify-content: center;
+}
 .primaryContainer {
-  margin: 10px;
-  text-align: justify;
+  margin: 20px;
+  padding: 50px;
+  max-width: 400px;
+  gap: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  box-shadow: 0px 0px 40px rgba(0, 238, 20, 0.911);
 }
 .secondaryContainer {
-  margin-top: 50px;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.trueValid {
+  border: 3px solid green;
+}
+.failureValid {
+  border: 3px solid red;
+}
+
+.dataContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-.photoContainer {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-.photo {
-  border: 2px solid silver;
-  width: 600px;
-  display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 footer {
