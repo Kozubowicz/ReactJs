@@ -1,14 +1,16 @@
+// Function to sort alphabetically list of students
+
 export default function sortStudents(objArr) {
-  // Tworzenie obiektu przechowującego podzielone kolekcje
+  // Creating an object to store divided collections
   const classes = {};
 
-  // Iterowanie po tablicy obiektów
+  // Iterating through the array of objects
   objArr.forEach((obj) => {
     const { class: objClass, ...rest } = obj;
 
-    // Sprawdzanie, czy atrybut "class" istnieje w obiekcie
+    // Checking if the "class" attribute exists in the object
     if (objClass) {
-      // Sprawdzanie, czy kolekcja o danej wartości "class" już istnieje
+      // Checking if a collection with the given "class" value already exists
       if (classes[objClass]) {
         classes[objClass].push(rest);
       } else {
@@ -17,10 +19,10 @@ export default function sortStudents(objArr) {
     }
   });
 
-  // Sortowanie kluczy (wartości "class") w kolejności alfabetycznej
+  // Sorting keys (values of "class") in alphabetical order
   const sortedKeys = Object.keys(classes).sort();
 
-  // Sortowanie tablic w obiekcie klas według atrybutu "surname"
+  // Sorting arrays in the classes object based on the "surname" attribute
   sortedKeys.forEach((key) => {
     classes[key].sort((a, b) => {
       const surnameA = a.surname.toLowerCase();
@@ -31,7 +33,7 @@ export default function sortStudents(objArr) {
     });
   });
 
-  // Pobieranie kluczy atrybutów
+  // Getting attribute keys
   const attributeKeys = Object.keys(objArr[0]).filter((key) => key !== "class");
   return { classes, sortedKeys, attributeKeys };
 }

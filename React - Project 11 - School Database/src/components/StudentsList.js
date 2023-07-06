@@ -1,3 +1,5 @@
+// Printing alphabetically list of students sorted by classes
+
 import React from "react";
 import sortStudents from "./sortStudents";
 

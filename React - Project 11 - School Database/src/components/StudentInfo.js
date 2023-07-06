@@ -1,3 +1,5 @@
+// Printing table with selected student grades
+
 import React, { useState } from "react";
 import sortStudents from "./sortStudents";
 import fetchData from "./fetch";

@@ -64,9 +64,7 @@ export default function App() {
       {/*Printing buttons with app modes names */}
       {teacherId && <Functions mode={downloadMode} />}
       {/*Printing a collection as a table */}
-      {teacherId && collection.length > 0 && mode === "List_all_data" && (
-        <Table collections={collection} dataBase="school" setRefreshData={setRefreshData} />
-      )}
+
       {teacherId && collection.length > 0 && mode === "Students_list" && (
         <StudentsList collections={collection} />
       )}
@@ -76,6 +74,10 @@ export default function App() {
       {teacherId && collection.length > 0 && mode === "Student_Info" && (
         <StudentInfo collections={collection} />
       )}
+      {teacherId && collection.length > 0 && mode === "List_all_data" && (
+        <Table collections={collection} dataBase="school" setRefreshData={setRefreshData} />
+      )}
+
       <Footer />
     </div>
   );

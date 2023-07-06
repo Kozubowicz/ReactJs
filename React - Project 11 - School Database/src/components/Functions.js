@@ -1,3 +1,5 @@
+// Printing buttons with primary functions of app
+
 import React from "react";
 
 export default function Functions({ mode }) {

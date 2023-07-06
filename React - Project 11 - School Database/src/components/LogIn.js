@@ -1,3 +1,5 @@
+// Log in page
+
 import React, { useState } from "react";
 
 export default function Login({ setTeacherId }) {
@@ -5,31 +7,16 @@ export default function Login({ setTeacherId }) {
   const [userPassword, setUserPassword] = useState();
   const [serwerAnswer, setSerwerAnswer] = useState(true);
 
+  // Getting email
   const handleEmail = (Email) => {
     setUserEmail(Email);
   };
+  // Getting password
   const handlePassword = (Password) => {
     setUserPassword(Password);
   };
 
-  const sendDataToServer = async (dataToSend) => {
-    return fetch(`http://192.168.1.3:8080/api/LogIn`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataToSend),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Server answer:", data);
-        return data;
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
-
+  // Sending Log in data and service answer
   const sendLogData = async () => {
     const logInData = { userEmail, userPassword };
 
@@ -48,7 +35,26 @@ export default function Login({ setTeacherId }) {
       console.error("Error:", error);
     }
   };
+  const sendDataToServer = async (dataToSend) => {
+    return fetch(`http://192.168.1.3:8080/api/LogIn`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Server answer:", data);
+        return data;
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   return (
+    // Printing Log In form
     <div className="formContainer">
       <div className="primaryFormContainer">
         <div className="secondaryFormContainer">

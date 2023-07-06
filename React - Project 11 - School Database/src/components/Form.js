@@ -1,3 +1,5 @@
+// Sign Up form
+
 import React, { useEffect, useState } from "react";
 
 export default function Form() {
@@ -20,6 +22,8 @@ export default function Form() {
   const [passwordClass, setPasswordClass] = useState("");
   const [passwordClass2, setPasswordClass2] = useState("");
 
+  /* Function to validate on client side data from form and marking them,
+     after clicking Sign in button */
   const validation = () => {
     setSerwerAnswer("");
     if (name && name.length > 2) {
@@ -37,6 +41,7 @@ export default function Form() {
       setSurnameClass("failureValid");
     }
 
+    // Pattern to validate email format
     const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
     if (email && emailPattern.test(email)) {
       setEmailValid(true);
@@ -46,6 +51,7 @@ export default function Form() {
       setEmailClass("failureValid");
     }
 
+    // Pattern to validate password format
     const passwordPattern =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[a-zA-Z\d!@#$%^&*()]{5,}$/;
     if (password && passwordPattern.test(password)) {
@@ -68,6 +74,8 @@ export default function Form() {
       setPasswordClass2("failureValid");
     }
   };
+
+  // Function to gather data to send after successful validation of all data from form
   useEffect(() => {
     if (
       nameValid === true &&
@@ -80,6 +88,7 @@ export default function Form() {
     }
   }, [nameValid, surnameValid, emailValid, passwordValid2]);
 
+  // Function to cleaning form after successful answer from server
   useEffect(() => {
     if (serwerAnswer === true) {
       setName("");
@@ -103,6 +112,7 @@ export default function Form() {
     }
   }, [serwerAnswer]);
 
+  // Service of sending and reciving answer from server
   const submit = async (form) => {
     try {
       let answer = await sendDataToServer(form);
@@ -117,7 +127,7 @@ export default function Form() {
       console.error("Error:", error);
     }
   };
-
+  // Sending data to server
   const sendDataToServer = async (dataToSend) => {
     return fetch(`http://192.168.1.3:8080/api/SignUp`, {
       method: "POST",
@@ -136,6 +146,7 @@ export default function Form() {
   };
 
   return (
+    // Printing form
     <div className="formContainer">
       <div className="primaryFormContainer">
         <div className="secondaryFormContainer">
@@ -185,6 +196,7 @@ export default function Form() {
           ></input>
         </div>
         <div>
+          {/* Printing answer if sending data to server was successful or failed */}
           <div className="signInButton">
             {serwerAnswer === true && (
               <p style={{ color: "rgb(0, 238, 20)", fontWeight: "bold" }}>Server Ok</p>

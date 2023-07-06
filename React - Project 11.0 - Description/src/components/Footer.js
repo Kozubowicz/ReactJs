@@ -1,5 +1,3 @@
-//Footer for app
-
 import React from "react";
 
 export default function Footer() {
