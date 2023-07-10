@@ -217,10 +217,12 @@ app.listen(port, () => {
 })`;
 
   return (
-    <div>
-      <SyntaxHighlighter language="javascript" style={dracula}>
-        {code}
-      </SyntaxHighlighter>
+    <div className="primaryContainer">
+      <div className="secondaryContainer">
+        <SyntaxHighlighter language="javascript" style={dracula}>
+          {code}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 }

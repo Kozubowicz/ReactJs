@@ -1,0 +1,138 @@
+body {
+  background-color: rgb(39, 39, 39);
+  color: white;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 255, 0);
+  border-radius: 10px;
+}
+
+button {
+  background-color: rgb(39, 39, 39);
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.removeButton {
+  background-color: rgb(173, 0, 0);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+input,
+textarea {
+  background-color: rgb(39, 39, 39);
+  padding: 10px;
+  color: white;
+  font-size: 1.2rem;
+  width: 70vw;
+  margin-bottom: 5px;
+  word-wrap: break-word;
+}
+Nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-around;
+  gap: 20px;
+}
+.PageTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.ModeBar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0.7;
+}
+.ModeBar button {
+  flex-grow: 1;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.galleryContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.galleryWindow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-shadow: 0px 0px 20px rgb(2, 255, 242);
+}
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  max-width: 70vw;
+  box-shadow: 0px 0px 20px rgb(2, 255, 242);
+}
+.listElement {
+  box-shadow: 0px 0px 20px rgb(219, 224, 224);
+  display: flex;
+  justify-content: space-between;
+}
+.element {
+  display: flex;
+  width: 100vw;
+  padding: 5px 20px;
+}
+.element:hover {
+  background-color: black;
+}
+
+.movieDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: space-around;
+}
+.posterContiner {
+  display: flex;
+  flex-direction: column;
+}
+.movieData {
+  display: flex;
+  flex-direction: column;
+}
+
+.primaryContainer {
+  margin: 10px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.secondaryContainer {
+  margin-top: 50px;
+  display: flex;
+  max-width: 90vw;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+small {
+  margin-left: 10px;
+}
