@@ -15,7 +15,9 @@ export default function NavBar({ teacherId, setTeacherId, setSignUp, signUp }) {
   return (
     <nav>
       <div className="NavLogo">
-        <img src={Logo} className="icon" alt="Logo" />
+        <a href="/">
+          <img src={Logo} className="icon" alt="Logo" />{" "}
+        </a>
         <h3 className="NavTile">School DB</h3>
       </div>
       <div className="NavLogo">

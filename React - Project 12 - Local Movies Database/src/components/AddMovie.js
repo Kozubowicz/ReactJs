@@ -22,15 +22,17 @@ export default function AddMovie({ movieIndex, edit = false }) {
     }
   };
 
+  const editData = () => {
+    setPoster(movieDatabase[movieIndex].poster);
+    setTitle(movieDatabase[movieIndex].title);
+    setYear(movieDatabase[movieIndex].year);
+    setDes(movieDatabase[movieIndex].descrition);
+  };
   useEffect(() => {
     if (edit === true) {
-      setPoster(movieDatabase[movieIndex].poster);
-      setTitle(movieDatabase[movieIndex].title);
-      setYear(movieDatabase[movieIndex].year);
-      setDes(movieDatabase[movieIndex].descrition);
+      editData();
     }
   }, []);
-
   return (
     <div className="movieDetails">
       <div className="movieData">

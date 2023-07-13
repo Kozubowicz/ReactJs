@@ -30,7 +30,7 @@ export default function App() {
   };
 
   const handleAddPeriod = (period) => {
-    setData((prevData) => [...prevData, period]);
+    setData((prevData) => [period, ...prevData]);
     setSelectedPeriod(period.title);
   };
 
@@ -44,20 +44,14 @@ export default function App() {
 
   const handleDeleteExpense = (expense) => {
     const updatedData = [...data];
-    const periodIndex = updatedData.findIndex(
-      (period) => period.title === selectedPeriod
-    );
+    const periodIndex = updatedData.findIndex((period) => period.title === selectedPeriod);
 
     if (periodIndex !== -1) {
       const period = updatedData[periodIndex];
-      const expenseIndex = period.expenses.findIndex(
-        (item) => item.id === expense.id
-      );
+      const expenseIndex = period.expenses.findIndex((item) => item.id === expense.id);
 
       if (expenseIndex !== -1) {
-        period.expenses = period.expenses.filter(
-          (item, index) => index !== expenseIndex
-        );
+        period.expenses = period.expenses.filter((item, index) => index !== expenseIndex);
         handleDataChange(updatedData);
       }
     }
@@ -73,16 +67,8 @@ export default function App() {
         onAddPeriod={handleAddPeriod}
         onDeletePeriod={handleDeletePeriod}
       />
-      <Expenses
-        data={data}
-        selectedPeriod={selectedPeriod}
-        onDataChange={handleDataChange}
-      />
-      <History
-        data={data}
-        selectedPeriod={selectedPeriod}
-        onDeleteExpense={handleDeleteExpense}
-      />
+      <Expenses data={data} selectedPeriod={selectedPeriod} onDataChange={handleDataChange} />
+      <History data={data} selectedPeriod={selectedPeriod} onDeleteExpense={handleDeleteExpense} />
       <Footer />
     </div>
   );

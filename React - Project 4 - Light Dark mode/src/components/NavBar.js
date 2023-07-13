@@ -18,7 +18,9 @@ export default function NavBar() {
   return (
     <nav>
       <div className="NavLogo">
-        <img src={Logo} className="icon" />
+        <a href="/">
+          <img src={Logo} className="icon" />
+        </a>
         <h3 className="NavTile">ReactFacts</h3>
       </div>
       <h3>React.Js - Project IV</h3>

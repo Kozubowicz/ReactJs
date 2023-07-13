@@ -5,7 +5,9 @@ export default function NavBar() {
   return (
     <nav>
       <div className="NavLogo">
-        <img src={Logo} className="icon" alt="Logo" />
+        <a href="/">
+          <img src={Logo} className="icon" alt="Logo" />
+        </a>
         <h3 className="NavTile">Registration Form</h3>
       </div>
       <div className="NavLogo">

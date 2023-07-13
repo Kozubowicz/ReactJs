@@ -6,6 +6,7 @@ import AddMovie from "./components/AddMovie";
 import Footer from "./components/Footer";
 
 export const MyContext = React.createContext();
+
 export default function App() {
   const [mode, setMode] = useState({});
   const [movieDatabase, setMovieDatabase] = useState([]);

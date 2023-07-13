@@ -11,13 +11,13 @@ export default function Expenses({ data, selectedPeriod, onDataChange }) {
         const updatedData = data.map((item) => {
           if (item.title === selectedPeriod) {
             const updatedExpenses = [
-              ...item.expenses,
               {
                 title: expenseTitle,
                 amount: expense,
                 date: new Date().toLocaleDateString(),
                 id: new Date(),
               },
+              ...item.expenses,
             ];
             return { ...item, expenses: updatedExpenses };
           }

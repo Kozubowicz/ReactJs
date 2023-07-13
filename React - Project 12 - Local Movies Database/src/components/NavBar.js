@@ -5,7 +5,9 @@ export default function NavBar({ setMode, setMovieIndex }) {
   return (
     <nav>
       <div className="PageTitle">
-        <img src={Logo} className="icon" alt="Logo" width={80} />
+        <a href="/">
+          <img src={Logo} className="icon" alt="Logo" width={80} />
+        </a>
         <h3 className="NavTile">Movie Database</h3>
       </div>
       <div className="ModeBar">
