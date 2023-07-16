@@ -49,6 +49,7 @@ export default function NewRestaurant() {
 
   return (
     <div>
+      <p className="header">Add new Restaurant</p>
       <div className="newRestaurantContainer">
         <div className="newRestaurantSecondaryContainer">
           <label>Restaurant Name:</label>

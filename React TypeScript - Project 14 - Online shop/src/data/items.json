@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Bike",
+    "price": 1000,
+    "imgUrl": "./products/Bike.png"
+  },
+  {
+    "id": 2,
+    "name": "Car",
+    "price": 29999.99,
+    "imgUrl": "./products/Car.png"
+  },
+  {
+    "id": 3,
+    "name": "Computer",
+    "price": 3499.99,
+    "imgUrl": "./products/Computer.png"
+  },
+  {
+    "id": 4,
+    "name": "Drone",
+    "price": 699.99,
+    "imgUrl": "./products/Drone.png"
+  },
+  {
+    "id": 5,
+    "name": "Gloves",
+    "price": 39.99,
+    "imgUrl": "./products/Gloves.png"
+  },
+  {
+    "id": 6,
+    "name": "Quad",
+    "price": 1499.99,
+    "imgUrl": "./products/Quad.png"
+  },
+  {
+    "id": 7,
+    "name": "Smartphone",
+    "price": 1249.99,
+    "imgUrl": "./products/Smartphone.png"
+  },
+  {
+    "id": 8,
+    "name": "Smartwatch",
+    "price": 349.99,
+    "imgUrl": "./products/Smartwatch.png"
+  }
+]

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
-import NewRestaurant from "./NewRestaurant";
 
 export default function Survey() {
   const [data, setData] = useState("");
@@ -86,7 +85,13 @@ export default function Survey() {
 
   return (
     <div className="surveyContainer">
-      <select value={restaurant} onChange={(e) => setRestaurant(e.target.value)}>
+      <select
+        value={restaurant}
+        onChange={(e) => {
+          setRestaurant(e.target.value);
+          setSuccessFlag("");
+        }}
+      >
         <option value="" disabled>
           Select restaurant...
         </option>
@@ -109,6 +114,7 @@ export default function Survey() {
               onClick={() => {
                 setRating(e);
                 setStarFlag(false);
+                setSuccessFlag("");
               }}
             >
               <FaStar color={rating < e ? "grey" : "rgb(0, 255, 0)"} size={22} />
@@ -117,7 +123,14 @@ export default function Survey() {
         })}
       </div>
       <label>Review:</label>
-      <textarea value={review} onChange={(e) => setReview(e.target.value)} maxLength={500} />
+      <textarea
+        value={review}
+        onChange={(e) => {
+          setReview(e.target.value);
+          setSuccessFlag("");
+        }}
+        maxLength={500}
+      />
       <span className="characterCount">{review.length}/500</span>
 
       <div className="sendButtonContainer">
@@ -153,7 +166,6 @@ export default function Survey() {
             );
           })}
       </div>
-      <NewRestaurant />
     </div>
   );
 }
